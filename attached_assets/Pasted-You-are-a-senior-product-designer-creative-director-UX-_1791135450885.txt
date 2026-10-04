@@ -1,0 +1,881 @@
+You are a senior product designer, creative director, UX engineer, frontend engineer, and portfolio strategist.
+
+I have an existing personal portfolio website:
+
+https://abdul-lembariti.github.io/dulla_graphicss_software/
+
+I want you to COMPLETELY MODERNIZE the existing portfolio while preserving the real content, projects, identity, and functionality that are worth keeping.
+
+Do NOT create a generic developer portfolio from scratch.
+
+You are modifying an existing portfolio that belongs to:
+
+**Abdulaziz H. Lembariti**
+
+My professional identity is:
+
+**Software Engineer + Graphics & Digital Creative**
+
+The current website incorrectly positions me mainly as "Web developer." I want the new site to communicate that I work across SOFTWARE + DESIGN + DIGITAL CREATIVE.
+
+The website should feel like the portfolio of a modern independent technology professional who can:
+
+* design digital experiences
+* build websites and web applications
+* build software products
+* work with modern frontend technologies
+* work with databases and backend services
+* create graphics and branding
+* create motion/video content
+* understand UI/UX
+* combine engineering and visual creativity
+
+The result should feel personal, premium, technical, creative, and memorable.
+
+---
+
+1. FIRST: AUDIT THE EXISTING SITE
+
+---
+
+Before changing anything, inspect the entire existing project/codebase and understand:
+
+* current framework
+* folder structure
+* components
+* assets
+* fonts
+* styling system
+* animations
+* project data
+* portfolio filtering
+* contact form
+* deployment configuration
+* GitHub Pages compatibility
+
+Do not unnecessarily replace the entire stack if the existing stack can support the redesign.
+
+Preserve useful existing functionality.
+
+Do not break the current GitHub Pages deployment.
+
+After understanding the current implementation, refactor where necessary instead of piling new code on top of old code.
+
+---
+
+2. NEW BRAND POSITIONING
+
+---
+
+Replace the weak generic hero positioning:
+
+"Web developer"
+
+with a stronger identity such as:
+
+**SOFTWARE ENGINEER**
+**& DIGITAL CREATIVE**
+
+or:
+
+**Software Engineer × Creative Designer**
+
+Choose the version that creates the strongest visual hierarchy.
+
+Hero supporting statement should communicate:
+
+"I build digital products and create the visual experiences behind them."
+
+Write polished copy that reflects both engineering and creative work.
+
+Do NOT make me sound like:
+
+* only a web developer
+* only a graphic designer
+* only an IT technician
+
+The positioning must clearly communicate the hybrid skill set.
+
+---
+
+3. HERO SECTION
+
+---
+
+Create a cinematic, modern hero section.
+
+The first screen should immediately communicate:
+
+WHO I AM
+WHAT I DO
+WHAT MAKES ME DIFFERENT
+
+Include:
+
+Abdulaziz H. Lembariti
+
+Software Engineer
+Graphics & Digital Creative
+
+A concise statement explaining that I combine software engineering, design, and creative technology to build digital experiences.
+
+Primary CTA:
+**View My Work**
+
+Secondary CTA:
+**Let's Work Together**
+
+Also include tasteful social links:
+
+GitHub
+LinkedIn
+Instagram
+Portfolio/contact
+
+Use placeholders where URLs are missing.
+
+Do NOT overcrowd the hero.
+
+---
+
+4. VISUAL DIRECTION
+
+---
+
+The design should feel like a combination of:
+
+Awwwards-level portfolio
+modern creative agency
+premium SaaS/product designer
+creative technologist
+modern software engineer portfolio
+
+Visual characteristics:
+
+* dark or near-black foundation
+* sophisticated neutral typography
+* subtle accent color
+* large editorial typography
+* generous whitespace
+* strong image presentation
+* smooth transitions
+* subtle motion
+* high-quality hover interactions
+* premium card design
+* layered depth
+* tasteful gradients
+* subtle glow where appropriate
+* modern grid system
+* clean alignment
+
+Do NOT make it look like:
+
+* a generic Bootstrap portfolio
+* an old WordPress template
+* a resume pasted into a webpage
+* a flashy neon "hacker" website
+* an overanimated gaming website
+
+The design should communicate:
+
+**TECHNICAL + CREATIVE + PREMIUM**
+
+---
+
+5. INTERACTION DESIGN
+
+---
+
+Add sophisticated but lightweight interactions.
+
+Examples:
+
+* smooth page transitions
+* section reveal animations
+* text reveal animations
+* subtle image parallax
+* magnetic-style buttons where appropriate
+* project card hover effects
+* image scale transitions
+* cursor interaction on desktop
+* smooth scrolling
+* staggered content reveal
+
+Animations must be:
+
+* smooth
+* intentional
+* fast
+* performance-conscious
+
+Do not animate everything.
+
+Respect:
+
+prefers-reduced-motion
+
+and ensure the site remains accessible.
+
+---
+
+6. NAVIGATION
+
+---
+
+Create a modern sticky navigation.
+
+Navigation:
+
+HOME
+ABOUT
+WORK
+EXPERIENCE
+SKILLS
+CONTACT
+
+Optional:
+RESUME
+
+On mobile use a clean fullscreen or slide-in navigation.
+
+The navigation should remain visually lightweight.
+
+---
+
+7. ABOUT SECTION
+
+---
+
+Replace the current generic About Me copy with a stronger personal narrative.
+
+Position me as someone who operates between:
+
+ENGINEERING
+DESIGN
+CREATIVE TECHNOLOGY
+
+Explain that I enjoy turning ideas into useful digital products and combining technical implementation with visual communication.
+
+Do not write exaggerated claims such as:
+
+"I created graphics design for many famous brand companies"
+
+unless specific verified brands are actually provided.
+
+The copy must sound confident but believable.
+
+Include a visual element such as:
+
+* portrait
+* creative workspace image
+* software/design collage
+* abstract personal visual
+
+Use real assets when available.
+
+---
+
+8. WHAT I DO
+
+---
+
+Create a visually strong capabilities section.
+
+Use 4-6 capability cards.
+
+Suggested categories:
+
+01 — SOFTWARE ENGINEERING
+Web applications, software products, frontend development, application architecture.
+
+02 — UI / UX
+Interfaces, design systems, user flows, digital experiences.
+
+03 — GRAPHICS & BRANDING
+Brand identity, social graphics, marketing visuals, visual systems.
+
+04 — MOTION & CONTENT
+Motion design, video editing, short-form content, digital storytelling.
+
+05 — CREATIVE TECHNOLOGY
+AI-assisted creative workflows, interactive experiences, emerging tools.
+
+06 — MOBILE / APPLICATION DEVELOPMENT
+Only include this if supported by my real experience.
+
+Each card should contain:
+
+* number
+* title
+* concise description
+* relevant technologies/tools where useful
+
+---
+
+9. FEATURED WORK
+
+---
+
+This should become the centerpiece of the website.
+
+Create:
+
+**SELECTED WORK**
+
+Instead of showing all projects as small generic cards, create a premium editorial portfolio layout.
+
+Every major project should feel like a case study.
+
+Use large visuals.
+
+Each project should contain:
+
+PROJECT NAME
+CATEGORY
+SHORT DESCRIPTION
+TECH STACK / TOOLS
+VIEW PROJECT
+
+Use the real projects already present in the existing site.
+
+Existing software projects include examples such as:
+
+* Molinda Bio-Protein
+* Love in Action
+* Duka Janja
+* Babblertours
+* RakaTours
+
+Existing creative/design work includes examples such as:
+
+* Nahul's Photography
+* Artworks
+* J Collection
+* Charity
+* Velora
+* ZPOLLS
+* Fashion Empire
+
+Do NOT delete strong existing work simply to make the site look cleaner.
+
+Instead, organize it better.
+
+---
+
+10. PORTFOLIO FILTERING
+
+---
+
+Keep and improve the existing filtering concept.
+
+Categories:
+
+ALL
+SOFTWARE
+DESIGN
+BRANDING
+MOTION
+OTHER CREATIVE
+
+Make the filter interaction elegant.
+
+Use animated transitions when switching categories.
+
+Do not reload the entire page when filtering.
+
+---
+
+11. FEATURED CASE STUDIES
+
+---
+
+Select the strongest projects and present them as deeper case studies.
+
+For each case study provide:
+
+THE CHALLENGE
+THE APPROACH
+MY ROLE
+TECHNOLOGIES / TOOLS
+THE RESULT
+
+Where this information is not currently available, create placeholders rather than inventing details.
+
+Example:
+
+[ADD PROJECT RESULT]
+
+[ADD MY ROLE]
+
+[ADD TECHNOLOGIES]
+
+Do not fabricate statistics.
+
+---
+
+12. SOFTWARE ENGINEERING SECTION
+
+---
+
+Create a dedicated section proving that I am a software engineer.
+
+Show technology groups instead of meaningless percentage meters.
+
+For example:
+
+FRONTEND
+React
+Next.js
+JavaScript
+TypeScript
+HTML
+CSS
+
+MOBILE
+Flutter
+Dart
+
+BACKEND / DATA
+Firebase
+Supabase
+APIs
+Database integration
+
+TOOLS
+Git
+GitHub
+Debugging
+Testing
+Performance optimization
+
+Only show technologies genuinely supported by my actual experience.
+
+Do NOT use:
+
+95%
+90%
+89%
+
+for skills.
+
+Replace the current percentage-based skill presentation with a more credible technology/category system.
+
+---
+
+13. CREATIVE SKILLS
+
+---
+
+Show my creative capabilities separately.
+
+Categories:
+
+GRAPHIC DESIGN
+BRANDING
+UI / UX
+MOTION DESIGN
+VIDEO
+PHOTOGRAPHY
+CONTENT CREATION
+
+Include tools only where I genuinely use them.
+
+Possible examples:
+
+Adobe Photoshop
+Illustrator
+After Effects
+Premiere Pro
+CapCut
+
+Do not invent tools.
+
+---
+
+14. EXPERIENCE / TIMELINE
+
+---
+
+Create a modern experience/timeline section.
+
+If formal employment information is incomplete, DO NOT invent employers.
+
+Instead, accurately represent:
+
+* Independent Software Development
+* Freelance / Creative Projects
+* Personal Product Development
+* Technical / Practical Experience
+
+Use project-based experience where appropriate.
+
+Each timeline item should have:
+
+DATE
+ROLE
+DESCRIPTION
+KEY CONTRIBUTIONS
+
+---
+
+15. EDUCATION
+
+---
+
+Correct and simplify the current education section.
+
+Relevant education should include:
+
+Arusha Technical College
+Certificate in Computer Science
+
+Ngarenaro Secondary School
+CSEE
+
+Do not emphasize primary school education on the main portfolio.
+
+Do not invent grades or qualifications.
+
+---
+
+16. REMOVE BAD / OUTDATED CONTENT
+
+---
+
+Remove or correct obvious errors in the current website.
+
+Specifically fix:
+
+* incorrect birthday display
+* duplicate/placeholder email
+* strange placeholder email text
+* incorrect grammar
+* fake or placeholder testimonials
+* lorem ipsum
+* fake-looking testimonials using names that are not verified
+* meaningless skill percentages
+* outdated education presentation
+* overly generic "Web developer" positioning
+* inconsistent capitalization
+* inconsistent project names
+* unnecessary template language
+* unnecessary stock content
+
+DO NOT replace fake testimonials with invented testimonials.
+
+If real testimonials are not available:
+
+REMOVE the testimonials section.
+
+It is better to have no testimonials than fake testimonials.
+
+---
+
+17. TESTIMONIALS
+
+---
+
+If real verified testimonials exist in the repository, preserve and redesign them.
+
+If the current testimonials are template/demo content, REMOVE THEM.
+
+Never fabricate testimonials.
+
+---
+
+18. CLIENTS / LOGOS
+
+---
+
+Only display real clients, companies, organizations, or brands that can be verified.
+
+Do not show empty logo slots.
+
+Do not use fake client logos.
+
+If there are not enough verified clients:
+
+replace the section with something more valuable such as:
+
+"Tools I Work With"
+
+or
+
+"Selected Technologies"
+
+---
+
+19. CONTACT SECTION
+
+---
+
+Create a strong final CTA.
+
+Headline:
+
+**Have an idea? Let's build it.**
+
+Supporting copy:
+
+Whether you need a digital product, website, visual identity, creative content, or a combination of design and technology, let's talk.
+
+Include:
+
+Email
+Phone
+Location
+Social links
+Contact form
+
+The contact section should feel like a proper final conversion section rather than just a form.
+
+---
+
+20. FOOTER
+
+---
+
+Minimal footer.
+
+Include:
+
+ABDULAZIZ H. LEMBARITI
+
+Software Engineer × Digital Creative
+
+Social links
+
+© Current Year Abdulaziz H. Lembariti
+
+Do not use unnecessary footer clutter.
+
+---
+
+21. PROJECT DATA ARCHITECTURE
+
+---
+
+Refactor portfolio projects into structured data if the current code does not already do this.
+
+Each project should support:
+
+title
+category
+description
+image
+gallery
+technologies
+tools
+year
+role
+github
+liveUrl
+featured
+caseStudy
+
+This should make it easy for me to add future projects without manually rebuilding components.
+
+---
+
+22. RESPONSIVENESS
+
+---
+
+The site must be excellent on:
+
+Desktop
+Laptop
+Tablet
+Mobile
+
+Pay special attention to mobile.
+
+The portfolio should feel intentional on a 390px-wide phone, not simply a desktop site squeezed into mobile.
+
+Ensure:
+
+* typography scales correctly
+* images remain impactful
+* navigation works perfectly
+* cards don't overflow
+* animations remain smooth
+* touch interactions are comfortable
+* no horizontal scrolling
+
+---
+
+23. PERFORMANCE
+
+---
+
+Do not sacrifice performance for aesthetics.
+
+Optimize:
+
+* image loading
+* image dimensions
+* lazy loading
+* animations
+* JavaScript execution
+* fonts
+* unnecessary dependencies
+
+Avoid huge background videos unless they provide real value.
+
+Use modern image formats where possible.
+
+The site should load quickly on normal mobile internet in Tanzania.
+
+---
+
+24. SEO
+
+---
+
+Improve SEO.
+
+Use:
+
+Title:
+Abdulaziz H. Lembariti — Software Engineer & Digital Creative
+
+Create an excellent meta description.
+
+Add:
+
+Open Graph metadata
+Twitter/X metadata
+Canonical URL
+Structured data where appropriate
+Correct heading hierarchy
+Semantic HTML
+Accessible alt text
+
+Use the actual site URL.
+
+---
+
+25. ACCESSIBILITY
+
+---
+
+Implement:
+
+* semantic HTML
+* accessible navigation
+* keyboard navigation
+* visible focus states
+* sufficient contrast
+* alt text
+* reduced-motion support
+* accessible buttons
+* form labels
+* meaningful link text
+
+---
+
+26. CODE QUALITY
+
+---
+
+The final code must be:
+
+* clean
+* maintainable
+* componentized
+* reusable
+* responsive
+* properly typed if TypeScript is used
+* free of unnecessary duplication
+* free of console errors
+* free of broken links
+* free of placeholder content
+
+Do not introduce unnecessary frameworks simply for the sake of the redesign.
+
+---
+
+27. FINAL VISUAL EXPERIENCE
+
+---
+
+The final website should feel like a portfolio that could realistically belong to a talented:
+
+Software Engineer
+Creative Technologist
+Graphic Designer
+Digital Creative
+
+It should make a recruiter think:
+
+"He's technically capable."
+
+It should make a client think:
+
+"He can actually build the product."
+
+And it should make a creative director think:
+
+"He understands visual design."
+
+The website should communicate all three within the first 10 seconds.
+
+---
+
+28. BEFORE FINISHING
+
+---
+
+Perform a full QA pass.
+
+Check:
+
+* every navigation link
+* every project link
+* every image
+* every CTA
+* mobile responsiveness
+* tablet responsiveness
+* desktop layout
+* contact form
+* animations
+* accessibility
+* console errors
+* broken imports
+* broken assets
+* GitHub Pages deployment
+* SEO metadata
+* favicon
+* page title
+* Open Graph preview
+
+Do not finish with "looks good."
+
+Actually test the implementation.
+
+---
+
+29. IMPORTANT
+
+---
+
+Do NOT destroy the existing portfolio just to make it look modern.
+
+Upgrade it.
+
+Preserve valuable real work.
+
+Remove weak/template content.
+
+Improve the storytelling.
+
+Reorganize projects.
+
+Create a stronger personal brand.
+
+The final site should feel like:
+
+**ABDULAZIZ H. LEMBARITI**
+**Software Engineer × Digital Creative**
+
+—not a generic template portfolio.
