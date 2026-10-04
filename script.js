@@ -1,173 +1,218 @@
-'use strict';
+import { DEFAULT_PROJECT_IMAGE, projects } from "./projects.js";
 
+const menuButton = document.querySelector(".menu-toggle");
+const navigation = document.querySelector("#primary-nav");
+const navLinks = [...document.querySelectorAll(".primary-nav a")];
 
-
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
-
-// sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
-
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
+function closeMenu() {
+  if (!menuButton || !navigation) return;
+  menuButton.setAttribute("aria-expanded", "false");
+  menuButton.setAttribute("aria-label", "Open navigation menu");
+  navigation.classList.remove("is-open");
 }
 
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-
-  testimonialsItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-    testimonialsModalFunc();
-
+if (menuButton && navigation) {
+  menuButton.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-expanded", String(!isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+    navigation.classList.toggle("is-open", !isOpen);
   });
 
-}
-
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
-
-
-
-// custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
-
-select.addEventListener("click", function () { elementToggleFunc(this); });
-
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
-
+  navLinks.forEach((link) => link.addEventListener("click", closeMenu));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
   });
 }
 
-// filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
+const projectGrid = document.querySelector("#project-grid");
+const filterButtons = [...document.querySelectorAll("[data-filter]")];
+const visibleCount = document.querySelector("#visible-count");
+const visibleLabel = document.querySelector("#visible-label");
+const filterEmpty = document.querySelector("#filter-empty");
 
-const filterFunc = function (selectedValue) {
+const categoryNames = {
+  software: "Software",
+  design: "Design",
+  branding: "Branding",
+  motion: "Motion",
+  creative: "Other creative",
+};
 
-  for (let i = 0; i < filterItems.length; i++) {
+function makeElement(tagName, className, text) {
+  const element = document.createElement(tagName);
+  if (className) element.className = className;
+  if (text !== undefined && text !== null) element.textContent = text;
+  return element;
+}
 
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
-    }
+function makeProjectCard(project, index) {
+  const card = makeElement("article", "project-card");
+  card.dataset.category = project.category;
+  card.dataset.projectId = project.id;
+  if (project.featured) card.classList.add("project-featured");
+  if (project.projectType === "independent-redesign") card.classList.add("independent-card");
 
+  const figure = makeElement("figure", "project-visual");
+  const image = makeElement("img");
+  image.src = project.image || DEFAULT_PROJECT_IMAGE;
+  image.alt = project.image ? `${project.title} project artwork` : "";
+  image.loading = index < 3 ? "eager" : "lazy";
+  image.decoding = "async";
+  image.addEventListener("error", () => {
+    if (image.dataset.fallbackApplied) return;
+    image.dataset.fallbackApplied = "true";
+    image.alt = "";
+    image.src = DEFAULT_PROJECT_IMAGE;
+  });
+  figure.append(image);
+
+  const visualLabel = project.projectType === "independent-redesign"
+    ? "INDEPENDENT REDESIGN"
+    : `${String(index + 1).padStart(2, "0")} / ${(categoryNames[project.category] || project.category).toUpperCase()}`;
+  figure.append(makeElement("span", "image-index", visualLabel));
+
+  if (project.liveUrl) {
+    const imageLink = makeElement("a", "project-image-link");
+    imageLink.href = project.liveUrl;
+    imageLink.target = "_blank";
+    imageLink.rel = "noopener noreferrer";
+    imageLink.setAttribute("aria-label", `Visit ${project.title}${project.projectType === "independent-redesign" ? " redesign" : " project"} (opens in a new tab)`);
+    const openIcon = makeElement("span", "image-open", "↗");
+    openIcon.setAttribute("aria-hidden", "true");
+    figure.append(openIcon);
+    imageLink.append(figure);
+    card.append(imageLink);
+  } else {
+    card.append(figure);
   }
 
-}
+  const meta = makeElement("div", "project-meta");
+  meta.append(makeElement("span", "", project.categoryLabel || categoryNames[project.category] || project.category));
+  meta.append(makeElement("span", "", String(index + 1).padStart(2, "0")));
+  card.append(meta);
 
-// add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
+  const heading = makeElement("div", "project-card-heading");
+  heading.append(makeElement("h3", "", project.title));
+  if (project.liveUrl) {
+    const arrow = makeElement("a", "project-arrow", "↗");
+    arrow.href = project.liveUrl;
+    arrow.target = "_blank";
+    arrow.rel = "noopener noreferrer";
+    arrow.setAttribute("aria-label", `Visit ${project.title}${project.projectType === "independent-redesign" ? " redesign" : " project"} (opens in a new tab)`);
+    heading.append(arrow);
+  }
+  card.append(heading);
 
-for (let i = 0; i < filterBtn.length; i++) {
+  if (project.description) {
+    card.append(makeElement("p", "project-description", project.description));
+  }
 
-  filterBtn[i].addEventListener("click", function () {
+  const projectTags = [...project.technologies, ...project.tools];
+  if (projectTags.length) {
+    const tags = makeElement("ul", "project-tags");
+    tags.setAttribute("aria-label", `${project.title} technologies and tools`);
+    projectTags.forEach((tag) => tags.append(makeElement("li", "", tag)));
+    card.append(tags);
+  }
 
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
-
-    lastClickedBtn.classList.remove("active");
-    this.classList.add("active");
-    lastClickedBtn = this;
-
-  });
-
-}
-
-
-
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
-  });
-}
-
-
-
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
-
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+  if (project.caseStudy) {
+    const caseStudy = makeElement("details", "project-case-study");
+    caseStudy.append(makeElement("summary", "", "Case study notes"));
+    const notes = makeElement("dl", "case-study-notes");
+    const fields = [
+      ["Challenge", project.caseStudy.challenge],
+      ["Approach", project.caseStudy.approach],
+      ["My role", project.caseStudy.role || project.role],
+      ["Technologies / tools", project.caseStudy.technologies],
+      ["Result", project.caseStudy.result],
+    ];
+    fields.forEach(([label, value]) => {
+      if (value) {
+        notes.append(makeElement("dt", "", label));
+        notes.append(makeElement("dd", "", value));
       }
-    }
+    });
+    caseStudy.append(notes);
+    card.append(caseStudy);
+  }
 
+  if (project.liveUrl) {
+    const visitLabel = project.projectType === "independent-redesign" ? "Visit redesign" : "Visit project";
+    const visitLink = makeElement("a", "project-visit");
+    visitLink.href = project.liveUrl;
+    visitLink.target = "_blank";
+    visitLink.rel = "noopener noreferrer";
+    visitLink.append(document.createTextNode(visitLabel));
+    visitLink.append(makeElement("span", "", " ↗"));
+    visitLink.querySelector("span").setAttribute("aria-hidden", "true");
+    card.append(visitLink);
+  }
+
+  return card;
+}
+
+function renderProjects() {
+  if (!projectGrid) return;
+  const cards = projects.map(makeProjectCard);
+  projectGrid.replaceChildren(...cards);
+
+  document.querySelectorAll("[data-filter-count='all']").forEach((count) => {
+    count.textContent = String(projects.length);
+  });
+  setFilter("all");
+}
+
+function setFilter(filter) {
+  if (!projectGrid) return;
+
+  const cards = [...projectGrid.querySelectorAll(".project-card")];
+  let count = 0;
+  cards.forEach((card, index) => {
+    const visible = filter === "all" || card.dataset.category === filter;
+    card.hidden = !visible;
+    if (visible) {
+      count += 1;
+      card.style.animationDelay = `${Math.min(index % 5, 4) * 35}ms`;
+    }
+  });
+
+  if (visibleCount) visibleCount.textContent = String(count);
+  if (visibleLabel) visibleLabel.textContent = count === 1 ? "project" : "projects";
+  if (filterEmpty) filterEmpty.hidden = count !== 0;
+
+  filterButtons.forEach((button) => {
+    const active = button.dataset.filter === filter;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
   });
 }
 
-function sendEmail(){
-  Email.send({
-    Host : "smtp.gmail.com",
-    Username : "abdullembariti2005@gmail.com",
-    Password : "Abdulhussein12.",
-    To : 'ca987829@gmail.com',
-    From : document.getElementById('email').value,
-    Subject : "This is the subject",
-    Body : "And this is the body"
-}).then(
-  message => alert(message)
-);
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => setFilter(button.dataset.filter));
+});
+
+renderProjects();
+
+const currentYear = document.querySelector("#current-year");
+if (currentYear) currentYear.textContent = String(new Date().getFullYear());
+
+if ("IntersectionObserver" in window) {
+  const sections = [...document.querySelectorAll("main section[id]")];
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => {
+          if (link.hash === `#${entry.target.id}`) {
+            link.setAttribute("aria-current", "location");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      });
+    },
+    { rootMargin: "-30% 0px -60% 0px" }
+  );
+  sections.forEach((section) => sectionObserver.observe(section));
 }

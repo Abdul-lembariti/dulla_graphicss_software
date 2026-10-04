@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#20211C"/>
+  <path d="M0 0h1200v900H0z" fill="url(#a)"/>
+  <g opacity=".4" stroke="#81786B">
+    <path d="M160 0v900M380 0v900M600 0v900M820 0v900M1040 0v900"/>
+    <path d="M0 150h1200M0 350h1200M0 550h1200M0 750h1200"/>
+  </g>
+  <circle cx="600" cy="445" r="220" stroke="#C88E69" stroke-opacity=".66"/>
+  <ellipse cx="600" cy="445" rx="310" ry="170" transform="rotate(-34 600 445)" stroke="#E8E4D8" stroke-opacity=".26"/>
+  <path d="M600 263 782 445 600 627 418 445 600 263Z" fill="#292923" stroke="#D6A17D" stroke-opacity=".8"/>
+  <path d="M600 350v190M505 445h190" stroke="#C2B6A4" stroke-opacity=".35"/>
+  <circle cx="600" cy="445" r="5" fill="#E4AD83"/>
+  <circle cx="374" cy="320" r="5" fill="#E4AD83"/>
+  <circle cx="841" cy="554" r="5" fill="#DCD6C7"/>
+  <path d="M80 810h1040" stroke="#E8E4D8" stroke-opacity=".25"/>
+  <text x="80" y="858" fill="#A09F94" font-family="monospace" font-size="15" letter-spacing="4">FORM / FUNCTION / DETAIL</text>
+  <text x="963" y="858" fill="#A09F94" font-family="monospace" font-size="15" letter-spacing="3">A—01</text>
+  <defs>
+    <radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="matrix(0 900 -950 0 630 0)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#36332D"/>
+      <stop offset="1" stop-color="#1B1C18"/>
+    </radialGradient>
+  </defs>
+</svg>
