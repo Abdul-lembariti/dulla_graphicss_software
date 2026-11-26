@@ -1,0 +1,29 @@
+﻿ABDULAZIZ H. LEMBARITI (DULLA)
+Software Engineer and Digital Creative
+Arusha, Tanzania
+
+I build responsive web and mobile experiences and work across graphic design,
+branding, UI/UX, motion, digital content, and photography.
+
+Development
+HTML, CSS, JavaScript, TypeScript, React, Next.js, Flutter, Dart, Firebase,
+WordPress, Git
+
+Creative tools
+Adobe Photoshop, Illustrator, After Effects, Premiere Pro, CapCut
+
+Teams I’ve worked with
+Code Africa
+Jambo Team
+
+Education
+Arusha Technical College — Certificate in Computer Science, 2022
+Ngarenaro Secondary School — O-Level Teams I’ve worked with
+Code Africa
+Jambo Team
+
+Education, 2021
+
+Portfolio: https://abdul-lembariti.github.io/dulla_graphicss_software/
+Email: abdullembariti2005@gmail.com
+GitHub: https://github.com/Abdul-lembariti

@@ -1,0 +1,192 @@
+[
+  {
+    "image": "images/work/love-in-action-site.webp",
+    "liveUrl": "https://www.loveinaction.foundation",
+    "featured": true,
+    "id": "love-in-action",
+    "title": "Love in Action",
+    "category": "software",
+    "categoryLabel": "Software development",
+    "description": "A website for a community care foundation in Moshi, Tanzania. It introduces the foundation and gives visitors ways to learn about its work and get involved.",
+    "gallery": [
+      "images/work/love-in-action.webp"
+    ],
+    "caseStudy": {
+      "approach": "The homepage leads with the foundation’s mission and gives visitors clear paths to learn about its work or support it."
+    }
+  },
+  {
+    "liveUrl": "https://duka-janja.vercel.app",
+    "id": "duka-janja",
+    "title": "Duka Janja",
+    "category": "software",
+    "categoryLabel": "Software development",
+    "description": "A Tanzanian marketplace with product search, category browsing, and a seller application.",
+    "image": "images/work/duka-janja-site.webp",
+    "caseStudy": {
+      "approach": "The storefront combines category navigation with promotional collections and product listings."
+    }
+  },
+  {
+    "description": "A self-initiated redesign for an Arusha coffee shop and pastry brand.",
+    "role": "Independent redesign",
+    "liveUrl": "https://artisancoffe-xi.vercel.app/",
+    "id": "artisan-coffee",
+    "title": "Artisan Coffee",
+    "category": "design",
+    "categoryLabel": "Independent website redesign",
+    "status": "Independent concept",
+    "image": "images/work/artisan-coffee-site.webp",
+    "caseStudy": {
+      "approach": "Food photography, bold typography, and direct access to the menu set the tone for the cafe."
+    }
+  },
+  {
+    "image": "images/work/velora-01.webp",
+    "id": "velora-01",
+    "title": "Velora — 01",
+    "category": "design",
+    "categoryLabel": "Graphic design",
+    "description": "A graphic design presentation for Velora.",
+    "imageFit": "contain"
+  },
+  {
+    "image": "images/work/artworks.webp",
+    "id": "artworks",
+    "title": "Artworks",
+    "category": "creative",
+    "categoryLabel": "Other creative",
+    "description": "A collection of artwork presented in a digital mockup.",
+    "gallery": [
+      "images/work/artworks-detail-1.webp",
+      "images/work/artworks-detail-2.webp"
+    ]
+  },
+  {
+    "description": "A self-initiated redesign for a Tanzanian safari and travel brand.",
+    "role": "Independent redesign",
+    "liveUrl": "https://dream-of-nature-safari.vercel.app/",
+    "id": "dream-of-nature-safari",
+    "title": "Dream of Nature Safari",
+    "category": "design",
+    "categoryLabel": "Independent website redesign",
+    "status": "Independent concept",
+    "caseStudy": {
+      "approach": "The navigation groups safaris, destinations, Kilimanjaro trips, and accommodation, with trip planning available from the main menu."
+    }
+  },
+  {
+    "image": "images/work/molinda-bio-protein.webp",
+    "id": "molinda-bio-protein",
+    "title": "Molinda Bio-Protein",
+    "category": "software",
+    "categoryLabel": "Software development",
+    "description": "Molinda Bio-Protein project with its visual identity.",
+    "imageFit": "contain"
+  },
+  {
+    "id": "babblertours",
+    "title": "Babblertours",
+    "category": "software",
+    "categoryLabel": "Software development"
+  },
+  {
+    "image": "images/work/rakatours.webp",
+    "id": "rakatours",
+    "title": "RakaTours",
+    "category": "software",
+    "categoryLabel": "Software development",
+    "imageFit": "contain"
+  },
+  {
+    "image": "images/work/nahuls-photography.webp",
+    "id": "nahuls-photography",
+    "title": "Nahul’s Photography",
+    "category": "creative",
+    "categoryLabel": "Photography & creative",
+    "description": "Visual identity work for Nahul’s Photography.",
+    "imageFit": "contain"
+  },
+  {
+    "image": "images/work/j-collection.webp",
+    "id": "j-collection",
+    "title": "J Collection",
+    "category": "design",
+    "categoryLabel": "Graphic design",
+    "imageFit": "contain"
+  },
+  {
+    "image": "images/work/charity-01.webp",
+    "id": "charity-01",
+    "title": "Charity — 01",
+    "category": "design",
+    "categoryLabel": "Graphic design",
+    "imageFit": "contain"
+  },
+  {
+    "image": "images/work/charity-02.webp",
+    "id": "charity-02",
+    "title": "Charity — 02",
+    "category": "design",
+    "categoryLabel": "Graphic design",
+    "imageFit": "contain"
+  },
+  {
+    "image": "images/work/charity-03.webp",
+    "id": "charity-03",
+    "title": "Charity — 03",
+    "category": "design",
+    "categoryLabel": "Graphic design",
+    "imageFit": "contain"
+  },
+  {
+    "image": "images/work/velora-02.webp",
+    "id": "velora-02",
+    "title": "Velora — 02",
+    "category": "design",
+    "categoryLabel": "Graphic design",
+    "description": "A view of the Velora logo.",
+    "imageFit": "contain"
+  },
+  {
+    "id": "artwork-01",
+    "title": "Artwork — 01",
+    "category": "creative",
+    "categoryLabel": "Other creative",
+    "image": "images/work/artwork-01.webp",
+    "imageFit": "contain"
+  },
+  {
+    "image": "images/work/artwork-02.webp",
+    "id": "artwork-02",
+    "title": "Artwork — 02",
+    "category": "creative",
+    "categoryLabel": "Other creative",
+    "imageFit": "contain"
+  },
+  {
+    "image": "images/work/zpolls-01.webp",
+    "id": "zpolls-01",
+    "title": "ZPOLLS — 01",
+    "category": "design",
+    "categoryLabel": "Graphic design",
+    "description": "A presentation of the ZPOLLS graphic mark.",
+    "imageFit": "contain"
+  },
+  {
+    "image": "images/work/zpolls-02.webp",
+    "id": "zpolls-02",
+    "title": "ZPOLLS — 02",
+    "category": "design",
+    "categoryLabel": "Graphic design",
+    "description": "A printed ZPOLLS mockup."
+  },
+  {
+    "image": "images/work/fashion-empire.webp",
+    "id": "fashion-empire",
+    "title": "Fashion Empire",
+    "category": "design",
+    "categoryLabel": "Graphic design",
+    "description": "Fashion Empire visual work shown on a tote bag mockup."
+  }
+]

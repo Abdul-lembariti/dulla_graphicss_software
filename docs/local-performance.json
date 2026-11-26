@@ -1,0 +1,29 @@
+{
+  "method": "Three fresh Chromium contexts at 390 x 844, localhost, unthrottled",
+  "runs": [
+    {
+      "lcp": 420,
+      "cls": 0,
+      "fcp": 420,
+      "resources": 12
+    },
+    {
+      "lcp": 352,
+      "cls": 0,
+      "fcp": 352,
+      "resources": 12
+    },
+    {
+      "lcp": 328,
+      "cls": 0,
+      "fcp": 328,
+      "resources": 12
+    }
+  ],
+  "median": {
+    "lcp": 352,
+    "cls": 0,
+    "fcp": 352,
+    "resources": 12
+  }
+}
