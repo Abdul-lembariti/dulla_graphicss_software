@@ -1,24 +1,29 @@
-﻿import { catalogPath, categories, externalProjectUrl, statuses } from "./projects.js";
+import { catalogPath, categories, externalProjectUrl, statuses } from "../projects.js";
 
+const owner = "Abdul-lembariti";
+const repository = "dulla_graphicss_software";
+const editorDirectory = "project-editor-5ac528b20d6f0b";
+const pagePath = location.pathname.replace(/\/index\.html$/, "/");
 const isLocalSession = location.hostname === "127.0.0.1"
   && location.protocol === "http:"
-  && /^\/edit\/[A-Za-z0-9_-]{32}\/$/.test(location.pathname);
+  && new RegExp(`^/edit/[A-Za-z0-9_-]{32}/${editorDirectory}/$`).test(pagePath);
+const isHostedSession = location.origin === `https://${owner.toLowerCase()}.github.io`
+  && pagePath === `/${repository}/${editorDirectory}/`;
 
-if (isLocalSession) startEditor();
+if (window.top === window.self && (isLocalSession || isHostedSession)) startEditor();
 
 function startEditor() {
-  const owner = "Abdul-lembariti";
-  const repository = "dulla_graphicss_software";
   const repoUrl = `https://github.com/${owner}/${repository}`;
-  const apiUrl = `https://api.github.com/repos/${owner}/${repository}`;
   const byId = (id) => document.getElementById(id);
-  const value = (id) => byId(id).value.trim();
   const connectForm = byId("connect-form");
-  const form = byId("project-form");
+  const template = byId("editor-template");
+  const form = template.content.querySelector("form");
+  const field = (id) => form.querySelector(`#${id}`);
+  const value = (id) => field(id).value.trim();
   const fieldset = form.querySelector("fieldset");
-  const cover = byId("cover");
-  const gallery = byId("gallery");
-  const disconnect = byId("disconnect");
+  const cover = field("cover");
+  const gallery = field("gallery");
+  const disconnect = field("disconnect");
   const status = byId("studio-status");
   const maxFileSize = 20 * 1024 * 1024;
   const imageTypes = new Set(["image/jpeg", "image/png", "image/webp"]);
@@ -29,18 +34,20 @@ function startEditor() {
 
   byId("studio-unavailable").hidden = true;
   byId("connection").hidden = false;
-  Object.entries(categories).forEach(([category, label]) => byId("category").add(new Option(label, category)));
-  statuses.forEach((label) => byId("project-status").add(new Option(label, label)));
+  Object.entries(categories).forEach(([category, label]) => field("category").add(new Option(label, category)));
+  statuses.forEach((label) => field("project-status").add(new Option(label, label)));
 
   function report(message, error = false) {
     status.textContent = message;
     status.dataset.error = String(error);
   }
 
-  async function request(path, auth, method = "GET", data) {
-    const response = await fetch(`${apiUrl}${path}`, {
+  async function githubRequest(path, auth, method = "GET", data) {
+    const response = await fetch(`https://api.github.com${path}`, {
       method,
       redirect: "error",
+      credentials: "omit",
+      cache: "no-store",
       signal: AbortSignal.timeout(30_000),
       headers: {
         Accept: "application/vnd.github+json",
@@ -58,13 +65,17 @@ function startEditor() {
     return response.json();
   }
 
+  function request(path, auth, method, data) {
+    return githubRequest(`/repos/${owner}/${repository}${path}`, auth, method, data);
+  }
+
   function clearSession() {
     token = "";
     baseBranch = "";
     draftBranch = "";
     byId("connection").hidden = false;
     byId("review-links").hidden = true;
-    form.hidden = true;
+    form.remove();
     form.reset();
     updatePreviews();
     report("Disconnected.");
@@ -73,19 +84,23 @@ function startEditor() {
 
   connectForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const field = byId("token");
+    const tokenInput = byId("token");
     const submit = connectForm.querySelector("button");
-    const candidate = field.value.trim();
-    field.value = "";
+    const candidate = tokenInput.value.trim();
+    tokenInput.value = "";
     if (!/^github_pat_[A-Za-z0-9_]+$/.test(candidate)) {
       report("Enter a fine-grained GitHub personal access token.", true);
-      field.focus();
+      tokenInput.focus();
       return;
     }
     submit.disabled = true;
-    field.disabled = true;
+    tokenInput.disabled = true;
     report("Connecting to GitHub…");
     try {
+      const account = await githubRequest("/user", candidate);
+      if (account.login?.toLowerCase() !== owner.toLowerCase()) {
+        throw new Error("Connect with the portfolio owner's GitHub account.");
+      }
       const repo = await request("", candidate);
       if (!repo.default_branch || repo.permissions?.push === false) {
         throw new Error("This token needs repository access with Contents read and write.");
@@ -94,16 +109,16 @@ function startEditor() {
       token = candidate;
       baseBranch = repo.default_branch;
       byId("connection").hidden = true;
-      form.hidden = false;
+      template.after(form);
       report("");
-      byId("title").focus();
+      field("title").focus();
     } catch (error) {
       report(error.message, true);
-      field.disabled = false;
-      field.focus();
+      tokenInput.disabled = false;
+      tokenInput.focus();
     } finally {
       submit.disabled = false;
-      field.disabled = false;
+      tokenInput.disabled = false;
     }
   });
 
@@ -126,7 +141,7 @@ function startEditor() {
   function updatePreviews() {
     previewUrls.forEach(URL.revokeObjectURL);
     previewUrls = [];
-    const previews = byId("image-previews");
+    const previews = field("image-previews");
     previews.replaceChildren();
     try {
       selectedFiles().forEach((file) => {
@@ -205,7 +220,7 @@ function startEditor() {
     if (statuses.includes(projectStatus)) project.status = projectStatus;
     if (value("role")) project.role = value("role");
     if (value("year")) project.year = value("year");
-    if (byId("contain").checked) project.imageFit = "contain";
+    if (field("contain").checked) project.imageFit = "contain";
 
     for (const [field, key] of [["live-url", "liveUrl"], ["repository-url", "github"]]) {
       const input = value(field);

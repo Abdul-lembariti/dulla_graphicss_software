@@ -1,4 +1,4 @@
-﻿"""Serve the portfolio editor on a private loopback address for one session."""
+"""Serve the portfolio editor on a private loopback address for one session."""
 
 import argparse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -8,10 +8,12 @@ import webbrowser
 
 STUDIO = Path(__file__).resolve().parent
 ROOT = STUDIO.parent
+EDITOR = ROOT / "project-editor-5ac528b20d6f0b"
+EDITOR_ROUTE = f"{EDITOR.name}/"
 FILES = {
-    "": (STUDIO / "index.html", "text/html; charset=utf-8"),
-    "studio.css": (STUDIO / "studio.css", "text/css; charset=utf-8"),
-    "studio.js": (STUDIO / "studio.js", "text/javascript; charset=utf-8"),
+    EDITOR_ROUTE: (EDITOR / "index.html", "text/html; charset=utf-8"),
+    EDITOR_ROUTE + "studio.css": (EDITOR / "studio.css", "text/css; charset=utf-8"),
+    EDITOR_ROUTE + "studio.js": (EDITOR / "studio.js", "text/javascript; charset=utf-8"),
     "style.css": (ROOT / "style.css", "text/css; charset=utf-8"),
     "projects.js": (ROOT / "projects.js", "text/javascript; charset=utf-8"),
     "fonts/dm-sans.woff2": (ROOT / "fonts/dm-sans.woff2", "font/woff2"),
@@ -59,7 +61,7 @@ def run(open_browser):
 
     with ThreadingHTTPServer(("127.0.0.1", 0), StudioHandler) as server:
         host = f"127.0.0.1:{server.server_port}"
-        url = f"http://{host}{prefix}"
+        url = f"http://{host}{prefix}{EDITOR_ROUTE}"
         print(f"Project editor: {url}", flush=True)
         print("Close this window or press Ctrl+C to stop the editor.", flush=True)
         if open_browser:

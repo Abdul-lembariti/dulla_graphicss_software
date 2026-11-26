@@ -22,3 +22,9 @@ The final build was measured in three fresh Chrome browser contexts emulating a 
 The earlier rolling-hero iteration scored **89 performance**, **100 accessibility**, **100 best practices** and **100 SEO** in Lighthouse mobile simulation, with 2.29 s LCP and 0.001 CLS rounded to three decimals. The final Lighthouse rerun did not receive permission. The scores describe that earlier iteration. [Archived Lighthouse report](lighthouse-rolling-iteration.json)
 
 Public publishing and live write access with the owner's GitHub token remain separate from these local checks.
+
+## Hosted editor and mobile hero update
+
+Chrome tested the editor at its GitHub Pages origin and subpath using intercepted responses. Invalid and non-owner tokens left the form locked. The owner flow uploaded two images and saved them with the catalog in one draft commit. Disconnect and refresh returned to sign-in. The local launcher also loaded at its random address and returned a 404 at its root.
+
+The compact hero passed at 320, 375, 390, 430, 768 and 850 px. The desktop treatment was checked at 851 and 1440 px. All eight widths passed the overflow check, and the main work link navigated on mobile. GitHub API writes were mocked.
